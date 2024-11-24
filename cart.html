@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AbhiRang - Shopping Cart</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body>
+    <nav class="navbar flex justify-between items-center p-4">
+        <div class="logo flex items-center">
+            <img alt="AbhiRang logo" class="h-8 w-8 mr-2" height="32" src="img/AbhiRang logo.png" width="32"/>
+            <a href="#">AbhiRang</a>
+        </div>
+        <div class="search-bar hidden md:block">
+            <i class="fas fa-search"></i>
+            <input class="p-2 rounded" placeholder="Search..." type="text"/>
+        </div>
+        <div class="nav-links hidden md:flex">
+            <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">Home</a>
+            <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">Login</a>
+            <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">Signup</a>
+            <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">About Us</a>
+        </div>
+        <div class="hamburger md:hidden">
+            <i class="fas fa-bars text-white"></i>
+        </div>
+    </nav>
+    <div class="mobile-menu hidden md:hidden flex flex-col items-center bg-gray-800 text-white p-4">
+        <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">Home</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">Login</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">Signup</a>
+        <div class="search-bar mt-4">
+            <i class="fas fa-search"></i>
+            <input class="p-2 rounded" placeholder="Search..." type="text"/>
+        </div>
+        <a class="ml-4 p-2 rounded bg-gray-700 text-white mt-4" href="#">About Us</a>
+    </div>
+    <div class="banner">
+        <h1>Your Shopping Cart</h1>
+    </div>
+    <section class="cart-container" id="cartContainer">
+        <!-- Cart items will be dynamically inserted here -->
+    </section>
+    <div class="total" id="totalPrice">Total: $0.00</div>
+    <footer class="footer">
+        <p>© 2023 AbhiRang. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+    <script>
+        const cartContainer = document.getElementById('cartContainer');
+        const totalPrice = document.getElementById('totalPrice');
+
+        let cart = [];
+
+        function updateCart() {
+            cartContainer.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" />
+                    <h3>${item.name}</h3>
+                    <p>$${item.price}</p>
+                    <button onclick="removeFromCart(${index})">Remove</button>
+                `;
+                cartContainer.appendChild(cartItem);
+                total += item.price;
+            });
+
+            totalPrice.textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        function addToCart(product) {
+            cart.push(product);
+            updateCart();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        // Example products to add to cart
+        const exampleProducts = [
+            { name: 'Abstract Art', price: 200, image: 'https://storage.googleapis.com/a1aa/image/Nme4FKBCY12wNiHQeUSGayz05Tbv3Jt200rMq37DNAG91pyTA.jpg' },
+            { name: 'Landscape Art', price: 150, image: 'https://storage.googleapis.com/a1aa/image/LYqbugRxNIIwEpX6g5Z9PqSkFaGfMyD8rD9pD7ir7Kgf1pyTA.jpg' },
+            { name: 'Portrait Art', price: 180, image: 'https://storage.googleapis.com/a1aa/image/PO7nnoxU5p60CtyzKVeae90FpcoBV8jFodKUlLn5P3cerTlnA.jpg' }
+        ];
+
+        // Adding example products to the cart
+        exampleProducts.forEach(product => addToCart(product));
+    </script>
+</body>
+</html>

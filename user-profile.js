@@ -242,3 +242,4 @@ class UserProfile {
 document.addEventListener('DOMContentLoaded', () => {
     const userProfile = new UserProfile();
 });
+
