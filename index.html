@@ -8,93 +8,155 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-
+    <style>
+        body {
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .dark-mode {
+            background-color: #1a202c; /* Dark background */
+            color: #cbd5e0; /* Light text */
+        }
+        .dark-mode .bg-gray-800 {
+            background-color: #2d3748; /* Darker gray */
+        }
+        .dark-mode .bg-gray-700 {
+            background-color: #4a5568; /* Darker gray */
+        }
+        .dark-mode .bg-gray-600 {
+            background-color: #718096; /* Darker gray */
+        }
+        .dark-mode .bg-gray-500 {
+            background-color: #a0aec0; /* Darker gray */
+        }
+    </style>
 </head>
-<body>
-    <nav class="navbar flex justify-between items-center p-4">
+<body class="bg-gray-100 font-roboto">
+    <nav class="navbar flex justify-between items-center p-4 bg-gray-800 text-white shadow-md">
         <div class="logo flex items-center">
-            <img alt="AbhiRang logo" class="h-8 w-8 mr-2" height="32" src="img/AbhiRang logo.png" width="32"/>
-            <a href="#">AbhiRang</a>
+            <img alt="AbhiRang logo" class="h-8 w-8 mr-2" src="img/AbhiRang logo.png"/>
+            <a class="text-xl font-bold" href="#">AbhiRang</a>
         </div>
-        <div class="search-bar hidden md:block">
-            <i class="fas fa-search"></i>
-            <input class="p-2 rounded" placeholder="Search..." type="text"/>
+        <div class="search-bar hidden md:flex items-center">
+            <input class="p-2 rounded-l bg-gray-700 text-white placeholder-gray-400" placeholder="Search..." type="text"/>
+            <button class="p-2 bg-gray-600 rounded-r text-white hover:bg-gray-500"><i class="fas fa-search"></i></button>
         </div>
         <div class="nav-links hidden md:flex">
-            <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">Home</a>
-            <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">Login</a>
-            <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">Signup</a>
-            <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">About Us</a>
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="#">
+                <i class="fas fa-home mr-2"></i> Home
+            </a>
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="#">
+                <i class="fas fa-sign-in-alt mr-2"></i> Login
+            </a>
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="#">
+                <i class="fas fa-user-plus mr-2"></i> Signup
+            </a>
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="#">
+                <i class="fas fa-info-circle mr-2"></i> About Us
+            </a>
+            <button id="theme-toggle" class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
         <div class="hamburger md:hidden">
             <i class="fas fa-bars text-white"></i>
         </div>
     </nav>
     <div class="mobile-menu hidden md:hidden flex flex-col items-center bg-gray-800 text-white p-4">
-        <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">Home</a>
-        <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">Login</a>
-        <a class="ml-4 p-2 rounded bg-gray-700 text-white" href="#">Signup</a>
-        <div class="search-bar mt-4 ">
-            <i class="fas fa-search"></i>
-            <input class="p-2 rounded" placeholder="Search..." type="text"/>
+        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="#">Home</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="#">Login</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="#">Signup</a>
+        <div class="search-bar mt-4 flex">
+            <input class="p-2 rounded-l bg-gray-700 text-white placeholder-gray-400" placeholder="Search..." type="text"/>
+            <button class="p-2 bg-gray-600 rounded-r text-white hover:bg-gray-500"><i class="fas fa-search"></i></button>
         </div>
-        <a class="ml-4 p-2 rounded bg-gray-700 text-white mt-4" href="#">About Us</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition mt-4" href="#">About Us</a>
     </div>
-    <div class="banner">
-        <h1>Welcome to AbhiRang</h1>
-    </div>
-    <section class="featured-products">
-        <h2>Featured Products</h2>
-        <div class="products">
-            <div class="product">
-                <img alt="Abstract painting with vibrant colors" height="200" src="https://storage.googleapis.com/a1aa/image/Nme4FKBCY12wNiHQeUSGayz05Tbv3Jt200rMq37DNAG91pyTA.jpg" width="200"/>
-                <h3>Abstract Art</h3>
-                <p>$200</p>
-                <button>Add to Cart</button>
+    <header class="banner bg-cover bg-center h-64 flex items-center justify-center text-white" style="background-image: url('img/HERO.jpg');">
+        <h1 class="text-4xl font-bold shadow-lg animate__animated animate__fadeIn">Welcome to AbhiRang</h1>
+    </header>
+    <main class="container mx-auto p-4">
+        <section class="featured-products my-8">
+            <h2 class="text-2xl font-bold mb-4">Featured Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="product bg-white p-4 rounded shadow hover:shadow-lg transition transform hover:scale-105">
+                    <img alt="Abstract painting with vibrant colors" class="w-full h-48 object-cover rounded" src="https://storage.googleapis.com/a1aa/image/Nme4FKBCY12wNiHQeUSGayz05Tbv3Jt200rMq37DNAG91pyTA.jpg"/>
+                    <h3 class="text-lg font-semibold mt-2">Abstract Art</h3>
+                    <p class="text-gray-700">$200</p>
+                    <button class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">Add to Cart</button>
+                </div>
+                <div class="product bg-white p-4 rounded shadow hover:shadow-lg transition transform hover:scale-105">
+                    <img alt="Landscape painting with mountains and a river" class="w-full h-48 object-cover rounded" src="https://storage.googleapis.com/a1aa/image/LYqbugRxNIIwEpX6g5Z9PqSkFaGfMyD8rD9pD7ir7Kgf1pyTA.jpg"/>
+                    <h3 class="text-lg font-semibold mt-2">Landscape Art</h3>
+                    <p class="text-gray-700">$150</p>
+                    <button class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">Add to Cart</button>
+                </div>
+                <div class="product bg-white p-4 rounded shadow hover:shadow-lg transition transform hover:scale-105">
+                    <img alt="Portrait painting of a woman with a hat" class="w-full h-48 object-cover rounded" src="https://storage.googleapis.com/a1aa/image/PO7nnoxU5p60CtyzKVeae90FpcoBV8jFodKUlLn5P3cerTlnA.jpg"/>
+                    <h3 class="text-lg font-semibold mt-2">Portrait Art</h3>
+                    <p class="text-gray-700">$180</p>
+                    <button class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">Add to Cart</button>
+                </div>
+                <div class="product bg-white p-4 rounded shadow hover:shadow-lg transition transform hover:scale-105">
+                    <img alt="Modern art piece with geometric shapes" class="w-full h-48 object-cover rounded" src="https://storage.googleapis.com/a1aa/image/oSsygFkxZ2phEpKwqhSf1XafC5e9EWrc29rvEfqg7iRFYnKPB.jpg"/>
+                    <h3 class="text-lg font-semibold mt-2">Modern Art</h3>
+                    <p class="text-gray-700">$220</p>
+                    <button class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">Add to Cart</button>
+                </div>
+                <div class="product bg-white p-4 rounded shadow hover:shadow-lg transition transform hover:scale-105">
+                    <img alt="Surreal painting with dream-like elements" class="w-full h-48 object-cover rounded" src="https://storage.googleapis.com/a1aa/image/8Tj0otzo0r5MGl6SThcUxukxEYQh6HmXD4vpkDO1EqVf4U5JA.jpg"/>
+                    <h3 class="text-lg font-semibold mt-2">Surreal Art</h3>
+                    <p class="text-gray-700">$250</p>
+                    <button class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">Add to Cart</button>
+                </div>
+                <div class="product bg-white p-4 rounded shadow hover:shadow-lg transition transform hover:scale-105">
+                    <img alt="Minimalist painting with simple lines and shapes" class="w-full h-48 object-cover rounded" src="https://storage.googleapis.com/a1aa/image/FaNnoixXip4WKpaPaji7tbtcgBf9fseg8PrSjTonWX0qjTlnA.jpg"/>
+                    <h3 class="text-lg font-semibold mt-2">Minimalist Art</h3>
+                    <p class="text-gray-700">$180</p>
+                    <button class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">Add to Cart</button>
+                </div>
+                <!-- New Products -->
+                <div class="product bg-white p-4 rounded shadow hover:shadow-lg transition transform hover:scale-105">
+                    <img alt="Colorful abstract art piece" class="w-full h-48 object-cover rounded" src="https://storage.googleapis.com/a1aa/image/FaNnoixXip4WKpaPaji7tbtcgBf9fseg8PrSjTonWX0qjTlnA.jpg"/>
+                    <h3 class="text-lg font-semibold mt-2">Colorful Abstract</h3>
+                    <p class="text-gray-700">$300</p>
+                    <button class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">Add to Cart</button>
+                </div>
+                <div class="product bg-white p-4 rounded shadow hover:shadow-lg transition transform hover:scale-105">
+                    <img alt="Nature-inspired art piece" class="w-full h-48 object-cover rounded" src="https://storage.googleapis.com/a1aa/image/FaNnoixXip4WKpaPaji7tbtcgBf9fseg8PrSjTonWX0qjTlnA.jpg"/>
+                    <h3 class="text-lg font-semibold mt-2">Nature Inspired</h3>
+                    <p class="text-gray-700">$275</p>
+                    <button class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">Add to Cart</button>
+                </div>
             </div>
-            <div class="product">
-                <img alt="Landscape painting with mountains and a river" height="200" src="https://storage.googleapis.com/a1aa/image/LYqbugRxNIIwEpX6g5Z9PqSkFaGfMyD8rD9pD7ir7Kgf1pyTA.jpg" width="200"/>
-                <h3>Landscape Art</h3>
-                <p>$150</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img alt="Portrait painting of a woman with a hat" height="200" src="https://storage.googleapis.com/a1aa/image/PO7nnoxU5p60CtyzKVeae90FpcoBV8jFodKUlLn5P3cerTlnA.jpg" width="200"/>
-                <h3>Portrait Art</h3>
-                <p>$180</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img alt="Modern art piece with geometric shapes" height="200" src="https://storage.googleapis.com/a1aa/image/oSsygFkxZ2phEpKwqhSf1XafC5e9EWrc29rvEfqg7iRFYnKPB.jpg" width="200"/>
-                <h3>Modern Art</h3>
-                <p>$220</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img alt="Surreal painting with dream-like elements" height="200" src="https://storage.googleapis.com/a1aa/image/8Tj0otzo0r5MGl6SThcUxukxEYQh6HmXD4vpkDO1EqVf4U5JA.jpg" width="200"/>
-                <h3>Surreal Art</h3>
-                <p>$250</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img alt="Minimalist painting with simple lines and shapes" height="200" src="https://storage.googleapis.com/a1aa/image/FaNnoixXip4WKpaPaji7tbtcgBf9fseg8PrSjTonWX0qjTlnA.jpg" width="200"/>
-                <h3>Minimalist Art</h3>
-                <p>$180</p>
-                <button>Add to Cart</button>
-            </div>
+        </section>
+    </main>
+    <footer class="footer bg-gray-800 text-white p-6 text-center">
+        <div class="flex justify-center mb-4">
+            <a class="text-gray-400 hover:text-white transition mx-2" href="#">Privacy Policy</a>
+            <span class="text-gray-400">|</span>
+            <a class="text-gray-400 hover:text-white transition mx-2" href="#">Terms of Service</a>
         </div>
-    </section>
-    <footer class="footer">
-        <p>© 2023 AbhiRang. All rights reserved.</p>
-        <p>
-            <a href="#">Privacy Policy</a> |
-            <a href="#">Terms of Service</a>
-        </p>
+        <p class="text-sm">© 2024 AbhiRang. All rights reserved.</p>
+        <div class="social-icons mt-4">
+            <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-pinterest"></i></a>
+        </div>
     </footer>
     <script>
         document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.mobile-menu').classList.toggle('active');
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        // Theme toggle functionality
+        const themeToggleButton = document.getElementById('theme-toggle');
+        themeToggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggleButton.querySelector('i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
         });
     </script>
 </body>
-</html>c
+</html>
