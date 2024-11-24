@@ -34,24 +34,28 @@
     <nav class="navbar flex justify-between items-center p-4 bg-gray-800 text-white shadow-md">
         <div class="logo flex items-center">
             <img alt="AbhiRang logo" class="h-8 w-8 mr-2" src="img/AbhiRang logo.png"/>
-            <a class="text-xl font-bold" href="#">AbhiRang</a>
+            <a class="text-xl font-bold" href="index.html">AbhiRang</a>
         </div>
         <div class="search-bar hidden md:flex items-center">
-            <input class="p-2 rounded-l bg-gray-700 text-white placeholder-gray-400" placeholder="Search..." type="text"/>
-            <button class="p-2 bg-gray-600 rounded-r text-white hover:bg-gray-500"><i class="fas fa-search"></i></button>
+            <div class="relative">
+                <input class="p-2 rounded-l bg-gray-700 text-white placeholder-gray-400 pr-10" placeholder="Search..." type="text"/>
+                <button class="absolute right-0 top-0 mt-2 mr-2 p-2 bg-gray-600 rounded-r text-white hover:bg-gray-500">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
         </div>
         <div class="nav-links hidden md:flex">
-            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="#">
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="index.html">
                 <i class="fas fa-home mr-2"></i> Home
             </a>
-            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="#">
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="product-listing.html">
+                <i class="fas fa-th mr-2"></i> Products
+            </a>
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="login.html">
                 <i class="fas fa-sign-in-alt mr-2"></i> Login
             </a>
-            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="#">
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="signup.html">
                 <i class="fas fa-user-plus mr-2"></i> Signup
-            </a>
-            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="#">
-                <i class="fas fa-info-circle mr-2"></i> About Us
             </a>
             <button id="theme-toggle" class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center">
                 <i class="fas fa-moon"></i>
@@ -61,15 +65,16 @@
             <i class="fas fa-bars text-white"></i>
         </div>
     </nav>
+    
     <div class="mobile-menu hidden md:hidden flex flex-col items-center bg-gray-800 text-white p-4">
-        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="#">Home</a>
-        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="#">Login</a>
-        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="#">Signup</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="index.html">Home</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="login.html">Login</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="signup.html">Signup</a>
         <div class="search-bar mt-4 flex">
             <input class="p-2 rounded-l bg-gray-700 text-white placeholder-gray-400" placeholder="Search..." type="text"/>
             <button class="p-2 bg-gray-600 rounded-r text-white hover:bg-gray-500"><i class="fas fa-search"></i></button>
         </div>
-        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition mt-4" href="#">About Us</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition mt-4" href="about.html">About Us</a>
     </div>
     <header class="banner bg-cover bg-center h-64 flex items-center justify-center text-white" style="background-image: url('img/HERO.jpg');">
         <h1 class="text-4xl font-bold shadow-lg animate__animated animate__fadeIn">Welcome to AbhiRang</h1>
@@ -132,7 +137,7 @@
     </main>
     <footer class="footer bg-gray-800 text-white p-6 text-center">
         <div class="flex justify-center mb-4">
-            <a class="text-gray-400 hover:text-white transition mx-2" href="#">Privacy Policy</a>
+            <a class="text-gray-400 hover:text-white transition mx-2" href="">Privacy Policy</a>
             <span class="text-gray-400">|</span>
             <a class="text-gray-400 hover:text-white transition mx-2" href="#">Terms of Service</a>
         </div>
@@ -158,5 +163,6 @@
             icon.classList.toggle('fa-sun');
         });
     </script>
+     <!-- <script src="script.js"></script> Link to JavaScript -->
 </body>
 </html>

@@ -1,138 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AbhiRang - Checkout</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .dark-mode {
+            background-color: #1a202c; /* Dark background */
+            color: #cbd5e0; /* Light text */
+        }
+    </style>
 </head>
-<body>
-    <!-- Header Section (Navbar) -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="img/AbhiRang logo.png" alt="AbhiRang Logo" class="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="product-listing.html">Shop</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
-                    <div class="d-flex align-items-center">
-                        <form class="search-form me-3">
-                            <div class="input-group">
-                                <input type="search" class="form-control" placeholder="Search artwork..." aria-label="Search">
-                                <button class="btn btn-outline-primary" type="submit"><i class="fas fa-search"></i></button>
-                            </div>
-                        </form>
-                        <div class="nav-buttons">
-                            <a href="cart.html" class="btn btn-link position-relative">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span class="cart-count">0</span>
-                            </a>
-                            <a href="login.html" class="btn btn-outline-primary ms-2">Login</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Checkout Section -->
-    <div class="container py-5">
-        <h2>Checkout</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Billing Details</h3>
-                <form>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" id="email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="address" class="form-label">Shipping Address</label>
-                        <input type="text" class="form-control" id="address">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Proceed to Payment</button>
-                </form>
-            </div>
-            <div class="col-md-6">
-                <h3>Order Summary</h3>
-                <ul class="list-group">
-                    <li class="list-group-item">Item 1: $100</li>
-                    <li class="list-group-item">Item 2: $200</li>
-                    <li class="list-group-item"><strong>Total: $300</strong></li>
-                </ul>
-            </div>
+<body class="bg-gray-100 font-roboto dark-mode">
+    <nav class="navbar flex justify-between items-center p-4 bg-gray-800 text-white shadow-md">
+        <div class="logo flex items-center">
+            <img alt="AbhiRang logo" class="h-8 w-8 mr-2" src="img/AbhiRang logo.png"/>
+            <a class="text-xl font-bold" href="index.html">AbhiRang</a>
         </div>
-    </div>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <h5>About AbhiRang</h5>
-                    <p>Discover and collect unique artworks from talented artists worldwide.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="shipping.html">Shipping</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
-                    <h5>Categories</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Paintings</a></li>
-                        <li><a href="#">Sculptures</a></li>
-                        <li><a href="#">Digital Art</a></li>
-                        <li><a href="#">Photography</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Contact Us</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Art Street, Creative City</li>
-                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-                        <li><i class="fas fa-envelope"></i> info@abhirang.com</li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="mt-4 mb-3">
-            <div class="row">
-                <div class="col-md-6"><p>&copy; 2024 AbhiRang. All rights reserved.</p></div>
-                <div class="col-md-6 text-md-end">
-                    <a href="privacy.html" class="text-white me-3">Privacy Policy</a>
-                    <a href="terms.html" class="text-white">Terms of Service</a>
-                </div>
-            </div>
+        <div class="nav-links">
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="index.html">Home</a>
+            <button id="theme-toggle" class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
+    </nav>
+    <main class="container mx-auto p-4">
+        <h2 class="text-2xl font-bold mb-4 text-center">Checkout</h2>
+        <form class="max-w-md mx-auto bg-white p-6 rounded shadow-md">
+            <div class="mb-4">
+                <label class="block text-gray-700" for="name">Name</label>
+                <input class="w-full p-2 border border-gray-300 rounded" type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700" for="email">Email</label>
+                <input class="w-full p-2 border border-gray-300 rounded" type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700" for="address">Address</label>
+                <input class="w-full p-2 border border-gray-300 rounded" type="text" id="address" placeholder="Enter your address" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700" for="card">Credit Card Number</label>
+                <input class="w-full p-2 border border-gray-300 rounded" type="text" id="card" placeholder="Enter your card number" required>
+            </div>
+            <button class="w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition" type="submit">Complete Purchase</button>
+        </form>
+    </main>
+    <footer class="footer bg-gray-800 text-white p-6 text-center">
+        <p>© 2024 AbhiRang. All rights reserved.</p>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Theme toggle functionality
+        const themeToggleButton = document.getElementById('theme-toggle');
+        themeToggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggleButton.querySelector('i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+    </script>
 </body>
 </html>

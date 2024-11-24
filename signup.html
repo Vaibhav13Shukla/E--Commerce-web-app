@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>AbhiRang - Login</title>
+    <title>AbhiRang - Signup</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -31,18 +31,22 @@
         </div>
     </nav>
     <main class="container mx-auto p-4">
-        <h2 class="text-2xl font-bold mb-4 text-center">Login to Your Account</h2>
+        <h2 class="text-2xl font-bold mb-4 text-center">Create Your Account</h2>
         <form class="max-w-md mx-auto bg-white p-6 rounded shadow-md">
+            <div class="mb-4">
+                <label class="block text-gray-700" for="name">Name</label>
+                <input class="w-full p-2 border border-gray-300 rounded" type="text" id="name" placeholder="Enter your name" required>
+            </div>
             <div class="mb-4">
                 <label class="block text-gray-700" for="email">Email</label>
                 <input class="w-full p-2 border border-gray-300 rounded" type="email" id="email" placeholder="Enter your email" required>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700" for="password">Password</label>
-                <input class="w-full p-2 border border-gray-300 rounded" type="password" id="password" placeholder="Enter your password" required>
+                <input class="w-full p-2 border border-gray-300 rounded" type="password" id="password" placeholder="Create a password" required>
             </div>
-            <button class="w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition" type="submit">Login</button>
-            <p class="mt-4 text-center">Don't have an account? <a href="signup.html" class="text-blue-500">Sign up</a></p>
+            <button class="w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition" type="submit">Sign Up</button>
+            <p class="mt-4 text-center">Already have an account? <a href="login.html" class="text-blue-500">Login</a></p>
         </form>
     </main>
     <footer class="footer bg-gray-800 text-white p-6 text-center">

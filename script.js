@@ -1,92 +1,43 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const navSlide = () => {
-        const burger = document.querySelector('.burger');
-        const nav = document.querySelector('.nav-links');
-        const navLinks = document.querySelectorAll('.nav-links li');
+// script.js
 
-        burger.addEventListener('click', () => {
-            // Toggle Nav
-            nav.classList.toggle('nav-active');
-
-            // Animate Links
-            navLinks.forEach((link, index) => {
-                if (link.style.animation) {
-                    link.style.animation = '';
-                } else {
-                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                }
-            });
-
-            // Burger Animation
-            burger.classList.toggle('toggle');
+// Theme toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggleButton = document.getElementById('theme-toggle');
+    if (themeToggleButton) {
+        themeToggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggleButton.querySelector('i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
         });
-    };
+    }
 
-    navSlide();
-
-    // Modal functionality
-    const modal = document.getElementById('authModal');
-    const loginBtn = document.getElementById('loginBtn');
-    const signupBtn = document.getElementById('signupBtn');
-    const closeBtn = document.getElementsByClassName('close')[0];
-    const loginTabBtn = document.getElementById('loginTabBtn');
-    const signupTabBtn = document.getElementById('signupTabBtn');
-    const loginForm = document.getElementById('loginForm');
-    const signupForm = document.getElementById('signupForm');
-
-    loginBtn.onclick = () => {
-        modal.style.display = 'block';
-        loginTabBtn.click();
-    };
-
-    signupBtn.onclick = () => {
-        modal.style.display = 'block';
-        signupTabBtn.click();
-    };
-
-    closeBtn.onclick = () => {
-        modal.style.display = 'none';
-    };
-
-    window.onclick = (event) => {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    };
-
-    loginTabBtn.onclick = () => {
-        loginForm.style.display = 'flex';
-        signupForm.style.display = 'none';
-        loginTabBtn.classList.add('active');
-        signupTabBtn.classList.remove('active');
-    };
-
-    signupTabBtn.onclick = () => {
-        loginForm.style.display = 'none';
-        signupForm.style.display = 'flex';
-        loginTabBtn.classList.remove('active');
-        signupTabBtn.classList.add('active');
-    };
-
-    // Form submission (for demonstration purposes)
-    loginForm.onsubmit = (e) => {
-        e.preventDefault();
-        alert('Login functionality would be implemented here.');
-    };
-
-    signupForm.onsubmit = (e) => {
-        e.preventDefault();
-        alert('Sign up functionality would be implemented here.');
-    };
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+    // Hamburger menu for mobile
+    const hamburger = document.querySelector('.hamburger');
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
         });
-    });
+    }
 });
+fetch('/api/products')
+    .then(response => {
+        console.log('Response:', response); // Log the response
+        return response.json();
+    })
+    .then(products => {
+        console.log('Products:', products); // Log the products
+        const productList = document.getElementById('product-list');
+        products.forEach(product => {
+            const productCard = `
+                <div class="product bg-white p-4 rounded shadow hover:shadow-lg transition transform hover:scale-105">
+                    <img alt="${product.name}" class="w-full h-48 object-cover rounded" src="${product.image_url}"/>
+                    <h3 class="text-lg font-semibold mt-2">${product.name}</h3>
+                    <p class="text-gray-700">$${product.price}</p>
+                    <a href="product-details.html?id=${product.id}" class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">View Details</a>
+                </div>
+            `;
+            productList.insertAdjacentHTML('beforeend', productCard);
+        });
+    })
+    .catch(error => console.error('Error fetching products:', error));
