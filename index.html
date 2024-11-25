@@ -28,6 +28,10 @@
         .dark-mode .bg-gray-500 {
             background-color: #a0aec0; /* Darker gray */
         }
+        /* Adjust search icon size */
+        .search-icon {
+            font-size: 1.25rem; /* Adjust size as needed */
+        }
     </style>
 </head>
 <body class="bg-gray-100 font-roboto">
@@ -40,7 +44,7 @@
             <div class="relative">
                 <input class="p-2 rounded-l bg-gray-700 text-white placeholder-gray-400 pr-10" placeholder="Search..." type="text"/>
                 <button class="absolute right-0 top-0 mt-2 mr-2 p-2 bg-gray-600 rounded-r text-white hover:bg-gray-500">
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search search-icon"></i>
                 </button>
             </div>
         </div>
@@ -51,11 +55,20 @@
             <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="product-listing.html">
                 <i class="fas fa-th mr-2"></i> Products
             </a>
-            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="login.html">
-                <i class="fas fa-sign-in-alt mr-2"></i> Login
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="cart.html">
+                <i class="fas fa-shopping-cart mr-2"></i> Cart
             </a>
-            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="signup.html">
-                <i class="fas fa-user-plus mr-2"></i> Signup
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="checkout.html">
+                <i class="fas fa-credit-card mr-2"></i> Checkout
+            </a>
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="about.html">
+                <i class="fas fa-info-circle mr-2"></i> About Us
+            </a>
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="contact.html">
+                <i class="fas fa-envelope mr-2"></i> Contact
+            </a>
+            <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center" href="login.html">
+                <i class="fas fa-envelope mr-2"></i> Login
             </a>
             <button id="theme-toggle" class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition flex items-center">
                 <i class="fas fa-moon"></i>
@@ -68,13 +81,15 @@
     
     <div class="mobile-menu hidden md:hidden flex flex-col items-center bg-gray-800 text-white p-4">
         <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="index.html">Home</a>
-        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="login.html">Login</a>
-        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="signup.html">Signup</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="product-listing.html">Products</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="cart.html">Cart</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="checkout.html">Checkout</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="about.html">About Us</a>
+        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition" href="contact.html">Contact</a>
         <div class="search-bar mt-4 flex">
             <input class="p-2 rounded-l bg-gray-700 text-white placeholder-gray-400" placeholder="Search..." type="text"/>
-            <button class="p-2 bg-gray-600 rounded-r text-white hover:bg-gray-500"><i class="fas fa-search"></i></button>
+            <button class="p-2 bg-gray-600 rounded-r text-white hover:bg-gray-500"><i class="fas fa-search search-icon"></i></button>
         </div>
-        <a class="ml-4 p-2 rounded bg-gray-700 hover:bg-gray-600 transition mt-4" href="about.html">About Us</a>
     </div>
     <header class="banner bg-cover bg-center h-64 flex items-center justify-center text-white" style="background-image: url('img/HERO.jpg');">
         <h1 class="text-4xl font-bold shadow-lg animate__animated animate__fadeIn">Welcome to AbhiRang</h1>
@@ -107,46 +122,21 @@
                     <p class="text-gray-700">$220</p>
                     <button class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">Add to Cart</button>
                 </div>
-                <div class="product bg-white p-4 rounded shadow hover:shadow-lg transition transform hover:scale-105">
-                    <img alt="Surreal painting with dream-like elements" class="w-full h-48 object-cover rounded" src="https://storage.googleapis.com/a1aa/image/8Tj0otzo0r5MGl6SThcUxukxEYQh6HmXD4vpkDO1EqVf4U5JA.jpg"/>
-                    <h3 class="text-lg font-semibold mt-2">Surreal Art</h3>
-                    <p class="text-gray-700">$250</p>
-                    <button class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">Add to Cart</button>
-                </div>
-                <div class="product bg-white p-4 rounded shadow hover:shadow-lg transition transform hover:scale-105">
-                    <img alt="Minimalist painting with simple lines and shapes" class="w-full h-48 object-cover rounded" src="https://storage.googleapis.com/a1aa/image/FaNnoixXip4WKpaPaji7tbtcgBf9fseg8PrSjTonWX0qjTlnA.jpg"/>
-                    <h3 class="text-lg font-semibold mt-2">Minimalist Art</h3>
-                    <p class="text-gray-700">$180</p>
-                    <button class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">Add to Cart</button>
-                </div>
-                <!-- New Products -->
-                <div class="product bg-white p-4 rounded shadow hover:shadow-lg transition transform hover:scale-105">
-                    <img alt="Colorful abstract art piece" class="w-full h-48 object-cover rounded" src="https://storage.googleapis.com/a1aa/image/FaNnoixXip4WKpaPaji7tbtcgBf9fseg8PrSjTonWX0qjTlnA.jpg"/>
-                    <h3 class="text-lg font-semibold mt-2">Colorful Abstract</h3>
-                    <p class="text-gray-700">$300</p>
-                    <button class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">Add to Cart</button>
-                </div>
-                <div class="product bg-white p-4 rounded shadow hover:shadow-lg transition transform hover:scale-105">
-                    <img alt="Nature-inspired art piece" class="w-full h-48 object-cover rounded" src="https://storage.googleapis.com/a1aa/image/FaNnoixXip4WKpaPaji7tbtcgBf9fseg8PrSjTonWX0qjTlnA.jpg"/>
-                    <h3 class="text-lg font-semibold mt-2">Nature Inspired</h3>
-                    <p class="text-gray-700">$275</p>
-                    <button class="mt-2 w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700 transition">Add to Cart</button>
-                </div>
             </div>
         </section>
     </main>
     <footer class="footer bg-gray-800 text-white p-6 text-center">
         <div class="flex justify-center mb-4">
-            <a class="text-gray-400 hover:text-white transition mx-2" href="">Privacy Policy</a>
+            <a class="text-gray-400 hover:text-white transition mx-2" href="Privacy.html">Privacy Policy</a>
             <span class="text-gray-400">|</span>
-            <a class="text-gray-400 hover:text-white transition mx-2" href="#">Terms of Service</a>
+            <a class="text-gray-400 hover:text-white transition mx-2" href="terms.html">Terms of Service</a>
         </div>
         <p class="text-sm">© 2024 AbhiRang. All rights reserved.</p>
         <div class="social-icons mt-4">
-            <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-pinterest"></i></a>
+            <a href="https://www.facebook.com/" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com/" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-instagram"></i></a>
+            <a href="https://in.pinterest.com/" class="text-gray-400 hover:text-white mx-2"><i class="fab fa-pinterest"></i></a>
         </div>
     </footer>
     <script>
@@ -163,6 +153,5 @@
             icon.classList.toggle('fa-sun');
         });
     </script>
-     <!-- <script src="script.js"></script> Link to JavaScript -->
 </body>
 </html>
